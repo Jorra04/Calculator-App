@@ -6,6 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
 public class Controller {
 	static boolean operatorPressed;
@@ -67,148 +69,59 @@ public class Controller {
 	@FXML
 	private Button div;
 
-	void initialize() {
+	public void initialize() {
 		display.setEditable(false);
 	}
 
 	@FXML
 	void onePressed(ActionEvent event) {
-		if(computationComplete) {
-			display.clear();
-		}
-		display.setText(display.getText() + "1");
-		if (!operatorPressed) {
-
-			num1 += 1;
-		} else {
-			num2 += 1;
-		}
+		addNum(1);
 
 	}
 
 	@FXML
 	void twoPressed(ActionEvent event) {
-		if(computationComplete) {
-			display.clear();
-		}
-		display.setText(display.getText() + "2");
-		if (!operatorPressed) {
-			num1 += 2;
-		} else {
-			num2 += 2;
-		}
+		addNum(2);
 	}
 
 	@FXML
 	void threePressed(ActionEvent event) {
-		if(computationComplete) {
-			display.clear();
-		}
-		display.setText(display.getText() + "3");
-		if (!operatorPressed) {
-			num1 += 3;
-
-		} else {
-			num2 += 3;
-		}
+		addNum(3);
 	}
 
 	@FXML
 	void fourPressed(ActionEvent event) {
-		if(computationComplete) {
-			display.clear();
-		}
-		display.setText(display.getText() + "4");
-
-		if (!operatorPressed) {
-			num1 += 4;
-		} else {
-			num2 += 4;
-		}
+		addNum(4);
 	}
 
 	@FXML
 	void fivePressed(ActionEvent event) {
-		if(computationComplete) {
-			display.clear();
-		}
-		display.setText(display.getText() + "5");
-
-		if (!operatorPressed) {
-			num1 += 5;
-		} else {
-			num2 += 5;
-		}
+		addNum(5);
 	}
 
 	@FXML
 	void sixPressed(ActionEvent event) {
-		if(computationComplete) {
-			display.clear();
-		}
-		display.setText(display.getText() + "6");
-
-		if (!operatorPressed) {
-			num1 += 6;
-		} else {
-			num2 += 6;
-		}
+		addNum(6);
 	}
 
 	@FXML
 	void sevenPressed(ActionEvent event) {
-		if(computationComplete) {
-			display.clear();
-		}
-		display.setText(display.getText() + "7");
-
-		if (!operatorPressed) {
-			num1 += 7;
-		} else {
-			num2 += 7;
-		}
+		addNum(7);
 	}
 
 	@FXML
 	void eightPressed(ActionEvent event) {
-		if(computationComplete) {
-			display.clear();
-		}
-		display.setText(display.getText() + "8");
-
-		if (!operatorPressed) {
-			num1 += 8;
-		} else {
-			num2 += 8;
-		}
+		addNum(8);
 	}
 
 	@FXML
 	void ninePressed(ActionEvent event) {
-		if(computationComplete) {
-			display.clear();
-		}
-		display.setText(display.getText() + "9");
-
-		if (!operatorPressed) {
-			num1 += 9;
-		} else {
-			num2 += 9;
-		}
+		addNum(9);
 	}
 
 	@FXML
 	void zeroPressed(ActionEvent event) {
-		if(computationComplete) {
-			display.clear();
-		}
-		display.setText(display.getText() + "0");
-
-		if (!operatorPressed) {
-			num1 += 0;
-		} else {
-			num2 += 0;
-		}
+		addNum(0);
 	}
 	@FXML
 	void ansPressed(ActionEvent event) {
@@ -259,11 +172,8 @@ public class Controller {
 
 	@FXML
 	void compute(ActionEvent event) {
-//		display.setText(display.getText() + "/");
-//		System.out.println(num1);
-//		System.out.println(num2);
 		if(num1.isBlank() || num1.isEmpty()) {
-			num1+=0;
+			num1 += val;
 		}
 		if(num2.isBlank() || num2.isEmpty()) {
 			num2+=0;
@@ -306,8 +216,21 @@ public class Controller {
 		operatorPressed = false;
 		num1 = " ";
 		num2 = " ";
+		val = 0;
 		display.clear();
 		
 	}
+	
+	void addNum(int num) {
+		if(computationComplete) {
+			display.clear();
+		}
+		display.setText(display.getText() + num);
+		if (!operatorPressed) {
 
+			num1 += num;
+		} else {
+			num2 += num;
+		}
+	}
 }
