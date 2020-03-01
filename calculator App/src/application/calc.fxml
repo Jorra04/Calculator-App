@@ -36,6 +36,14 @@
       <Button fx:id="equals" layoutX="368.0" layoutY="490.0" mnemonicParsing="false" onAction="#compute" prefHeight="48.0" prefWidth="84.0" text="=" />
       <Button fx:id="zero" layoutX="97.0" layoutY="490.0" mnemonicParsing="false" onAction="#zeroPressed" prefHeight="48.0" prefWidth="84.0" text="0" />
       <Button fx:id="div" layoutX="550.0" layoutY="490.0" mnemonicParsing="false" onAction="#divide" prefHeight="48.0" prefWidth="84.0" text="/" />
-      <Button fx:id="ans" layoutX="550.0" layoutY="165.0" mnemonicParsing="false" onAction="#ansPressed" prefHeight="48.0" prefWidth="84.0" text="ANS" />
+      <Button fx:id="ans" layoutX="97.0" layoutY="566.0" mnemonicParsing="false" onAction="#ansPressed" prefHeight="48.0" prefWidth="84.0" text="ANS" />
+      <Button fx:id="factorial" layoutX="686.0" layoutY="235.0" mnemonicParsing="false" onAction="#factorial" prefHeight="48.0" prefWidth="84.0" text="n!" />
+      <Button fx:id="sqrt" layoutX="686.0" layoutY="319.0" mnemonicParsing="false" onAction="#sqrt" prefHeight="48.0" prefWidth="84.0" text="Sqrt(n)" />
+      <Button fx:id="square" layoutX="686.0" layoutY="490.0" mnemonicParsing="false" onAction="#square" prefHeight="48.0" prefWidth="84.0" text="x^2" />
+      <Button fx:id="exp1" layoutX="686.0" layoutY="405.0" mnemonicParsing="false" onAction="#exponentiate" prefHeight="48.0" prefWidth="84.0" text="x^y" />
+      <Button fx:id="Binary" layoutX="806.0" layoutY="235.0" mnemonicParsing="false" onAction="#zeroPressed" prefHeight="48.0" prefWidth="84.0" text="BIN" />
+      <Button fx:id="hex" layoutX="806.0" layoutY="319.0" mnemonicParsing="false" onAction="#zeroPressed" prefHeight="48.0" prefWidth="84.0" text="HEX" />
+      <Button fx:id="decimal" layoutX="806.0" layoutY="405.0" mnemonicParsing="false" onAction="#zeroPressed" prefHeight="48.0" prefWidth="84.0" text="DEC" />
+      <Button fx:id="signSwap" layoutX="806.0" layoutY="490.0" mnemonicParsing="false" onAction="#negate" prefHeight="48.0" prefWidth="84.0" text="+/-" />
    </children>
 </AnchorPane>

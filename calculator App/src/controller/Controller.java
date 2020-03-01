@@ -18,57 +18,83 @@ public class Controller {
 	float val = 0;
 	
 	@FXML
-	private TextField display;
-	@FXML
-	private Button ans;
-	@FXML
-	private Button one;
+    private TextField display;
 
-	@FXML
-	private Button two;
+    @FXML
+    private Button one;
 
-	@FXML
-	private Button mul;
+    @FXML
+    private Button two;
 
-	@FXML
-	private Button nine;
+    @FXML
+    private Button mul;
 
-	@FXML
-	private Button eight;
+    @FXML
+    private Button nine;
 
-	@FXML
-	private Button seven;
+    @FXML
+    private Button eight;
 
-	@FXML
-	private Button sub;
+    @FXML
+    private Button seven;
 
-	@FXML
-	private Button six;
+    @FXML
+    private Button sub;
 
-	@FXML
-	private Button five;
+    @FXML
+    private Button six;
 
-	@FXML
-	private Button four;
+    @FXML
+    private Button five;
 
-	@FXML
-	private Button add;
+    @FXML
+    private Button four;
 
-	@FXML
-	private Button three;
+    @FXML
+    private Button add;
 
-	@FXML
-	private Button clearAll;
+    @FXML
+    private Button three;
 
-	@FXML
-	private Button equals;
+    @FXML
+    private Button clearAll;
 
-	@FXML
-	private Button zero;
+    @FXML
+    private Button equals;
 
-	@FXML
-	private Button div;
+    @FXML
+    private Button zero;
 
+    @FXML
+    private Button div;
+
+    @FXML
+    private Button ans;
+
+    @FXML
+    private Button factorial;
+
+    @FXML
+    private Button sqrt;
+
+    @FXML
+    private Button square;
+
+    @FXML
+    private Button exp1;
+
+    @FXML
+    private Button Binary;
+
+    @FXML
+    private Button hex;
+
+    @FXML
+    private Button decimal;
+
+    @FXML
+    private Button signSwap;
+    
 	public void initialize() {
 		display.setEditable(false);
 	}
@@ -78,6 +104,14 @@ public class Controller {
 		addNum(1);
 
 	}
+//	@FXML
+//	void oneKeyPressed(KeyEvent event) {
+//		if(event.getCode().equals(KeyCode.ENTER)) {
+//			addNum(1);
+//		}
+//	}
+	
+	
 
 	@FXML
 	void twoPressed(ActionEvent event) {
@@ -169,6 +203,41 @@ public class Controller {
 		display.setText(display.getText() + "/");
 		operator = '/';
 	}
+	@FXML
+	void exponentiate(ActionEvent event) {
+		operatorPressed = true;
+		computationComplete = false;
+		display.setText(display.getText() + "^");
+		operator = '^';
+	}
+	@FXML
+	void square(ActionEvent event) {
+		operatorPressed = true;
+		computationComplete = false;
+		display.setText(display.getText() + "^2");
+		operator = '\''; //because i used char to disclose the operator, ** wont work, so i use @.
+	}
+	@FXML
+	void factorial(ActionEvent event) {
+		operatorPressed = true;
+		computationComplete = false;
+		display.setText(display.getText() + "!");
+		operator = '!'; 
+	}
+	@FXML
+	void sqrt(ActionEvent event) {
+		operatorPressed = true;
+		computationComplete = false;
+		display.setText("sqrt("+display.getText()+")");
+		operator = 'r'; 
+	}
+	@FXML
+	void negate(ActionEvent event) {
+		operatorPressed = true;
+		computationComplete = false;
+		operator = 'n'; 
+	}
+	
 
 	@FXML
 	void compute(ActionEvent event) {
@@ -201,6 +270,27 @@ public class Controller {
 			}
 			
 		}
+		else if(operator == '^') {
+			val = (float)Math.pow(Float.parseFloat(num1), Float.parseFloat(num2));
+			display.setText(Float.toString(val));
+		}
+		else if(operator == '\'') {
+			val = (float)Math.pow(Float.parseFloat(num1), 2);
+			display.setText(Float.toString(val));
+		}
+		else if(operator == '!') {
+			val = factorial(Float.parseFloat(num1));
+			display.setText(Float.toString(val));
+		}
+		else if(operator == 'r') {
+			val = (float) Math.sqrt(Float.parseFloat(num1));
+			display.setText(Float.toString(val));
+		}
+		else if(operator == 'n') {
+			float val1 =Float.parseFloat(num1);
+			val = -1*val1;
+			display.setText(Float.toString(val));
+		}
 		else {
 			display.setText(num1);
 		}
@@ -213,6 +303,7 @@ public class Controller {
 
 	@FXML
 	void clearButton(ActionEvent event) {
+		computationComplete = true;
 		operatorPressed = false;
 		num1 = " ";
 		num2 = " ";
@@ -220,6 +311,7 @@ public class Controller {
 		display.clear();
 		
 	}
+	
 	
 	void addNum(int num) {
 		if(computationComplete) {
@@ -232,5 +324,13 @@ public class Controller {
 		} else {
 			num2 += num;
 		}
+		computationComplete = false;
+	}
+	float factorial(float num) {
+		float val = 1;
+		for(int i = 1; i <= num; i ++) {
+			val*=i;
+		}
+		return val;
 	}
 }
