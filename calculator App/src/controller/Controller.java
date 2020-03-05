@@ -345,6 +345,13 @@ public class Controller {
 		operator = 'n';
 		Operations();
 	}
+	@FXML
+	void modulo(ActionEvent event) {
+		operatorPressed = true;
+		computationComplete = false;
+		display.setText(display.getText() + "%");
+		operator = '%';
+	}
 
 	@FXML
 	void baseChange(ActionEvent event) throws Exception {
@@ -474,7 +481,12 @@ public class Controller {
 			float val1 = Float.parseFloat(num1);
 			val = -1 * val1;
 			display.setText(Float.toString(val));
-		} else if (operator == 's') {
+		}
+		else if(operator == '%') {
+			int val = Integer.parseInt(num1) % Integer.parseInt(num2);
+			display.setText(val+"");
+		}
+		else if (operator == 's') {
 			if (inRads) {
 				display.setText(df.format((Math.sin(Float.parseFloat(num1)))));
 

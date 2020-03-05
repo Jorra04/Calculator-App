@@ -56,7 +56,7 @@
       <Button fx:id="decimalVal" layoutX="227.0" layoutY="494.0" mnemonicParsing="false" onAction="#decimalValPressed" prefHeight="48.0" prefWidth="84.0" text="." />
       <Button fx:id="pi" layoutX="691.0" layoutY="574.0" mnemonicParsing="false" onAction="#piPressed" prefHeight="48.0" prefWidth="84.0" text="π" />
       <Button fx:id="exFunc" layoutX="107.0" layoutY="129.0" mnemonicParsing="false" onAction="#additionalFunctions" prefHeight="28.0" prefWidth="113.0" text="Other Functions" />
-      <Button fx:id="modulo" layoutX="552.0" layoutY="579.0" mnemonicParsing="false" onAction="#divide" prefHeight="48.0" prefWidth="84.0" text="\%" />
+      <Button fx:id="modulo" layoutX="552.0" layoutY="579.0" mnemonicParsing="false" onAction="#modulo" prefHeight="48.0" prefWidth="84.0" text="\%" />
       <Button fx:id="euler" layoutX="807.0" layoutY="579.0" mnemonicParsing="false" onAction="#ePressed" prefHeight="48.0" prefWidth="84.0" text="e" />
    </children>
 </AnchorPane>
