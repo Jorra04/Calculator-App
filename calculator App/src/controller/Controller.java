@@ -5,6 +5,7 @@ import java.util.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -12,6 +13,7 @@ import javafx.scene.input.KeyEvent;
 public class Controller {
 	static boolean operatorPressed;
 	static boolean computationComplete;
+	boolean inRads;
 	String num1 = "";
 	String num2 = "";
 	char operator = ' ';
@@ -102,6 +104,11 @@ public class Controller {
 
 	@FXML
 	private Button tan;
+    @FXML
+    private RadioButton degrees;
+
+    @FXML
+    private RadioButton radians;
 
 	public void initialize() {
 		display.setEditable(false);
@@ -118,6 +125,14 @@ public class Controller {
 //			addNum(1);
 //		}
 //	}
+	@FXML
+	void rads(ActionEvent event) {
+		inRads = true;
+	}
+	@FXML
+	void degrees(ActionEvent event) {
+		inRads = false;
+	}
 
 	@FXML
 	void twoPressed(ActionEvent event) {
@@ -364,7 +379,13 @@ public class Controller {
 			val = -1 * val1;
 			display.setText(Float.toString(val));
 		} else if (operator == 's') {
-			display.setText(Float.toString((float)Math.sin(Float.parseFloat(num1))));
+			if(inRads) {
+				
+			}
+			else {
+				display.setText(Float.toString((float)Math.sin(Float.parseFloat(num1))));
+			}
+			
 		} else if (operator == 'c') {
 			display.setText(Float.toString((float)Math.cos(Float.parseFloat(num1))));
 		} else if (operator == 't') {
