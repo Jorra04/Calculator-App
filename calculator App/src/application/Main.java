@@ -24,9 +24,6 @@ public class Main extends Application {
 	    primaryStage.setResizable(true);
 	    primaryStage.show();
 	    
-	   primaryStage.setOnCloseRequest(e -> {
-		   Platform.exit();
-	   });
 	    
 	   
 	}

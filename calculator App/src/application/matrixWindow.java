@@ -22,7 +22,7 @@ public class matrixWindow {
 //		window.initModality(Modality.APPLICATION_MODAL); //stops interaction with the other scene while this scene is open.
 		window.setTitle(title);
 		window.setMinHeight(400);
-		window.setMinWidth(600);
+		window.setMinWidth(650);
 		
 		
 
