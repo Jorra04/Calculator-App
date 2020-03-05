@@ -86,13 +86,7 @@ public class Controller {
 	private Button exp1;
 
 	@FXML
-	private Button Binary;
-
-	@FXML
-	private Button hex;
-
-	@FXML
-	private Button decimal;
+	private Button baseChange;
 
 	@FXML
 	private Button signSwap;
@@ -104,14 +98,21 @@ public class Controller {
 
 	@FXML
 	private Button tan;
-    @FXML
-    private RadioButton degrees;
+	@FXML
+	private RadioButton degrees;
 
-    @FXML
-    private RadioButton radians;
+	@FXML
+	private RadioButton radians;
+
+	@FXML
+	private Button decimalVal;
+
+	@FXML
+	private Button pi;
 
 	public void initialize() {
 		display.setEditable(false);
+		degrees.setSelected(true);
 	}
 
 	@FXML
@@ -119,6 +120,7 @@ public class Controller {
 		addNum(1);
 
 	}
+
 //	@FXML
 //	void oneKeyPressed(KeyEvent event) {
 //		if(event.getCode().equals(KeyCode.ENTER)) {
@@ -129,6 +131,7 @@ public class Controller {
 	void rads(ActionEvent event) {
 		inRads = true;
 	}
+
 	@FXML
 	void degrees(ActionEvent event) {
 		inRads = false;
@@ -177,6 +180,47 @@ public class Controller {
 	@FXML
 	void zeroPressed(ActionEvent event) {
 		addNum(0);
+	}
+
+	@FXML
+	void decimalValPressed(ActionEvent event) {
+		display.setText(display.getText() + ".");
+		if (!operatorPressed) {
+
+			num1 += ".";
+		} else {
+			num2 += ".";
+		}
+		computationComplete = false;
+	}
+
+	@FXML
+	void piPressed(ActionEvent event) {
+		if (computationComplete) {
+			display.clear();
+		}
+		display.setText(display.getText() + "π");
+		System.out.println(num1+ "-->" + num1.length());
+		System.out.println(num1 + "-->" + num2.length());
+		if(num1.length() !=0 && num2.length()!= 0) {
+			if (!operatorPressed) {
+
+				num1 = "" + Float.parseFloat(num1) * Math.PI;
+			} else {
+				num2 = "" + Float.parseFloat(num2) * Math.PI;
+			}
+			computationComplete = false;
+		}
+		else {
+			if (!operatorPressed) {
+
+				num1 +=  Math.PI;
+			} else {
+				num2 +=Math.PI;
+			}
+			computationComplete = false;
+		}
+		
 	}
 
 	@FXML
@@ -253,6 +297,7 @@ public class Controller {
 
 	@FXML
 	void sqrt(ActionEvent event) {
+		
 		operatorPressed = true;
 		computationComplete = false;
 		display.setText("sqrt(" + display.getText() + ")");
@@ -275,24 +320,37 @@ public class Controller {
 
 	@FXML
 	void sine(ActionEvent event) {
+		if (computationComplete) {
+			display.clear();
+		}
 		operatorPressed = true;
 		computationComplete = false;
+		display.setText("sin(" + display.getText() + ")");
 		operator = 's'; // s for sine
 		Operations();
 	}
 
 	@FXML
 	void cosine(ActionEvent event) {
+		if (computationComplete) {
+			display.clear();
+		}
 		operatorPressed = true;
 		computationComplete = false;
+		display.setText("cos(" + display.getText() + ")");
 		operator = 'c'; // c for cosine
 		Operations();
 	}
 
 	@FXML
 	void tangent(ActionEvent event) {
+		if (computationComplete) {
+			display.clear();
+		}
+		
 		operatorPressed = true;
 		computationComplete = false;
+		display.setText("tan(" + display.getText() + ")");
 		operator = 't'; // t for tangent
 		Operations();
 	}
@@ -306,8 +364,8 @@ public class Controller {
 	void clearButton(ActionEvent event) {
 		computationComplete = true;
 		operatorPressed = false;
-		num1 = " ";
-		num2 = " ";
+		num1 = "";
+		num2 = "";
 		val = 0;
 		display.clear();
 	}
@@ -379,22 +437,35 @@ public class Controller {
 			val = -1 * val1;
 			display.setText(Float.toString(val));
 		} else if (operator == 's') {
+			if (inRads) {
+				display.setText(Float.toString((float) Math.sin(Math.toRadians(Float.parseFloat(num1)))));
+			} else {
+				display.setText(Float.toString((float) Math.sin(Math.toDegrees(Float.parseFloat(num1)))));
+			}
+
+		} else if (operator == 'c') {
 			if(inRads) {
-				
+				display.setText(Float.toString((float) Math.cos(Math.toRadians(Float.parseFloat(num1)))));
 			}
 			else {
-				display.setText(Float.toString((float)Math.sin(Float.parseFloat(num1))));
+				display.setText(Float.toString((float) Math.cos(Math.toDegrees(Float.parseFloat(num1)))));
 			}
 			
-		} else if (operator == 'c') {
-			display.setText(Float.toString((float)Math.cos(Float.parseFloat(num1))));
 		} else if (operator == 't') {
-			display.setText(Float.toString((float)Math.tan(Float.parseFloat(num1))));
+			if(inRads) {
+				display.setText(Float.toString((float) Math.tan(Math.toRadians(Float.parseFloat(num1)))));
+			}
+			else {
+				display.setText(Float.toString((float) Math.tan(Math.toDegrees(Float.parseFloat(num1)))));
+			}
+			
+			
 		} else {
 			display.setText(num1);
 		}
 		num1 = "";
 		num2 = "";
+		operator = ' ';
 		computationComplete = true;
 		operatorPressed = false;
 	}

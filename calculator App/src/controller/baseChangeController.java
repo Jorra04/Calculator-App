@@ -50,6 +50,10 @@ public class baseChangeController {
 
 	public void initialize() {
 		text2.setEditable(false);
+		dec.setSelected(true);
+		bin2.setSelected(true);
+		decPressed = true;
+		binPressed2 = true;
 
 	}
 
@@ -96,12 +100,6 @@ public class baseChangeController {
 	@FXML
 	void computeHandler(ActionEvent event) {
 		try {
-			//Checks to make sure that there are two states selected.
-			if((decPressed == false && hexPressed == false && binPressed == false) ||
-					(decPressed2 == false && hexPressed2 == false && binPressed2 == false)) {
-				application.ErrorMessage.display("Error", "Select two states.");
-			}
-		
 			//checks which two ratio buttons are active at the moment. Relies on the other calls of the press functions.
 			if (decPressed && hexPressed2) {
 				text2.setText(Integer.toHexString(Integer.parseInt(text1.getText())).toUpperCase());

@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -47,9 +48,12 @@
       <Button fx:id="sin" layoutX="807.0" layoutY="319.0" mnemonicParsing="false" onAction="#sine" prefHeight="48.0" prefWidth="84.0" text="SIN" />
       <Button fx:id="cos" layoutX="806.0" layoutY="405.0" mnemonicParsing="false" onAction="#cosine" prefHeight="48.0" prefWidth="84.0" text="COS" />
       <Button fx:id="tan" layoutX="806.0" layoutY="489.0" mnemonicParsing="false" onAction="#tangent" prefHeight="48.0" prefWidth="84.0" text="TAN" />
-      <RadioButton fx:id="degrees" layoutX="805.0" layoutY="129.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Degrees" />
-      <RadioButton fx:id="radians" layoutX="943.0" layoutY="127.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Radians" />
-      <Button fx:id="decimal" layoutX="227.0" layoutY="494.0" mnemonicParsing="false" onAction="#zeroPressed" prefHeight="48.0" prefWidth="84.0" text="." />
-      <Button fx:id="pi" layoutX="548.0" layoutY="578.0" mnemonicParsing="false" onAction="#divide" prefHeight="48.0" prefWidth="84.0" text="π" />
+      <RadioButton fx:id="degrees" layoutX="805.0" layoutY="129.0" mnemonicParsing="false" onAction="#degrees" prefHeight="25.0" prefWidth="107.0" text="Degrees">
+         <toggleGroup>
+            <ToggleGroup fx:id="groupA" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="radians" layoutX="943.0" layoutY="127.0" mnemonicParsing="false" onAction="#rads" prefHeight="25.0" prefWidth="107.0" text="Radians" toggleGroup="$groupA" />
+      <Button fx:id="decimalVal" layoutX="227.0" layoutY="494.0" mnemonicParsing="false" onAction="#decimalValPressed" prefHeight="48.0" prefWidth="84.0" text="." />
+      <Button fx:id="pi" layoutX="548.0" layoutY="578.0" mnemonicParsing="false" onAction="#piPressed" prefHeight="48.0" prefWidth="84.0" text="π" />
    </children>
 </AnchorPane>
