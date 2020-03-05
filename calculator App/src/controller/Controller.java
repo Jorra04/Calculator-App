@@ -223,6 +223,7 @@ public class Controller {
 		computationComplete = false;
 		display.setText(display.getText() + "!");
 		operator = '!'; 
+		Operations();
 	}
 	@FXML
 	void sqrt(ActionEvent event) {
@@ -230,22 +231,61 @@ public class Controller {
 		computationComplete = false;
 		display.setText("sqrt("+display.getText()+")");
 		operator = 'r'; 
+		Operations();
 	}
 	@FXML
 	void negate(ActionEvent event) {
 		operatorPressed = true;
 		computationComplete = false;
 		operator = 'n'; 
+		Operations();
 	} 
 	
 	@FXML
 	void baseChange(ActionEvent event ) throws Exception {
-		application.baseChangeWindow.display("Hello");
+		application.baseChangeWindow.display("Base Change Coversion");
 	}
 	
 
 	@FXML
 	void compute(ActionEvent event) {
+		Operations();
+
+	}
+
+	@FXML
+	void clearButton(ActionEvent event) {
+		computationComplete = true;
+		operatorPressed = false;
+		num1 = " ";
+		num2 = " ";
+		val = 0;
+		display.clear();
+		
+	}
+	
+	
+	void addNum(int num) {
+		if(computationComplete) {
+			display.clear();
+		}
+		display.setText(display.getText() + num);
+		if (!operatorPressed) {
+
+			num1 += num;
+		} else {
+			num2 += num;
+		}
+		computationComplete = false;
+	}
+	float factorial(float num) {
+		float val = 1;
+		for(int i = 1; i <= num; i ++) {
+			val*=i;
+		}
+		return val;
+	}
+	void Operations() {
 		if(num1.isBlank() || num1.isEmpty()) {
 			num1 += val;
 		}
@@ -303,39 +343,5 @@ public class Controller {
 		num2 = "";
 		computationComplete = true;
 		operatorPressed = false;
-
-	}
-
-	@FXML
-	void clearButton(ActionEvent event) {
-		computationComplete = true;
-		operatorPressed = false;
-		num1 = " ";
-		num2 = " ";
-		val = 0;
-		display.clear();
-		
-	}
-	
-	
-	void addNum(int num) {
-		if(computationComplete) {
-			display.clear();
-		}
-		display.setText(display.getText() + num);
-		if (!operatorPressed) {
-
-			num1 += num;
-		} else {
-			num2 += num;
-		}
-		computationComplete = false;
-	}
-	float factorial(float num) {
-		float val = 1;
-		for(int i = 1; i <= num; i ++) {
-			val*=i;
-		}
-		return val;
 	}
 }
