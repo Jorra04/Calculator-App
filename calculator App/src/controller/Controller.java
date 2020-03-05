@@ -1,5 +1,6 @@
 package controller;
 
+import java.text.DecimalFormat;
 import java.util.*;
 
 import javafx.event.ActionEvent;
@@ -109,6 +110,10 @@ public class Controller {
 
 	@FXML
 	private Button pi;
+	@FXML 
+	private Button exFunc;
+	
+	private DecimalFormat df = new DecimalFormat("0.0000");
 
 	public void initialize() {
 		display.setEditable(false);
@@ -438,36 +443,34 @@ public class Controller {
 			display.setText(Float.toString(val));
 		} else if (operator == 's') {
 			if (inRads) {
-				display.setText(Float.toString((float) Math.sin((Double.parseDouble(num1)))));
-				System.out.println(Math.toRadians(Math.sin(Math.PI)));
+				display.setText(df.format((Math.sin(Float.parseFloat(num1)))));
 				
 			} else {
 				double val = Double.parseDouble(num1);
 				double rad = val*(Math.PI / 180);
-				
-				display.setText(Float.toString((float) Math.sin(rad)));
+				display.setText(df.format(Math.sin(rad)));
 			}
 
 		} else if (operator == 'c') {
 			if(inRads) {
-				display.setText(Float.toString((float) Math.cos(Math.toRadians(Float.parseFloat(num1)))));
+				display.setText(df.format((Math.cos(Float.parseFloat(num1)))));
 			}
 			else {
 				double val = Double.parseDouble(num1);
 				double rad = val*(Math.PI / 180);
 				
-				display.setText(Float.toString((float) Math.cos(rad)));
+				display.setText(df.format(Math.cos(rad)));
 			}
 			
 		} else if (operator == 't') {
 			if(inRads) {
-				display.setText(Float.toString((float) Math.tan(Math.toRadians(Double.parseDouble(num1)))));
+				display.setText(df.format((Math.tan(Math.toRadians(Float.parseFloat(num1))))));
 			}
 			else {
 				double val = Double.parseDouble(num1);
 				double rad = val*(Math.PI / 180);
 				
-				display.setText(Float.toString((float) Math.tan(rad)));
+				display.setText(df.format(Math.tan(rad)));
 			}
 			
 			

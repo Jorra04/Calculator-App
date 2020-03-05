@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="789.0" prefWidth="1216.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="789.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
    <children>
-      <Pane prefHeight="71.0" prefWidth="1223.0">
+      <Pane prefHeight="71.0" prefWidth="1049.0">
          <children>
-            <TextField fx:id="display" layoutX="4.0" layoutY="11.0" prefHeight="54.0" prefWidth="1187.0">
+            <TextField fx:id="display" layoutX="13.0" layoutY="11.0" prefHeight="54.0" prefWidth="1023.0">
                <font>
                   <Font name="Bell MT Bold" size="18.0" />
                </font></TextField>
@@ -55,5 +55,6 @@
       <RadioButton fx:id="radians" layoutX="943.0" layoutY="127.0" mnemonicParsing="false" onAction="#rads" prefHeight="25.0" prefWidth="107.0" text="Radians" toggleGroup="$groupA" />
       <Button fx:id="decimalVal" layoutX="227.0" layoutY="494.0" mnemonicParsing="false" onAction="#decimalValPressed" prefHeight="48.0" prefWidth="84.0" text="." />
       <Button fx:id="pi" layoutX="548.0" layoutY="578.0" mnemonicParsing="false" onAction="#piPressed" prefHeight="48.0" prefWidth="84.0" text="π" />
+      <Button fx:id="exFunc" layoutX="107.0" layoutY="129.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="113.0" text="Other Functions" />
    </children>
 </AnchorPane>
