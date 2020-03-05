@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="290.0" prefWidth="514.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.gcdController">
+   <children>
+      <Text layoutX="172.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GCD calculator " textAlignment="CENTER">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Text layoutX="30.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Value 1">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="30.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Value 2">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="value1" layoutX="27.0" layoutY="111.0" prefHeight="25.0" prefWidth="124.0" promptText="Value 1" />
+      <TextField fx:id="value2" layoutX="27.0" layoutY="184.0" prefHeight="25.0" prefWidth="124.0" promptText="Value 2" />
+      <Button fx:id="compute" layoutX="30.0" layoutY="233.0" mnemonicParsing="false" onAction="#computeGcd" prefHeight="27.0" prefWidth="70.0" text="Compute" />
+      <Button fx:id="clear" layoutX="160.0" layoutY="233.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="70.0" text="Clear" />
+      <Text layoutX="314.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Output">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="output" layoutX="309.0" layoutY="107.0" prefHeight="33.0" prefWidth="124.0" promptText="GCD" />
+   </children>
+</AnchorPane>

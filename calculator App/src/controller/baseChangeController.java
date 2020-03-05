@@ -151,6 +151,7 @@ public class baseChangeController {
 			applicationMessages.ErrorMessage.display("Error", "Invalid format Exception");
 			text1.setText("");
 			text2.setText("");
+			
 		}
 
 	}

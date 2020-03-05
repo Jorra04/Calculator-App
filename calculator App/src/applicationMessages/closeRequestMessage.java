@@ -21,7 +21,7 @@ public class closeRequestMessage {
 		window.initModality(Modality.APPLICATION_MODAL); //stops interaction with the other scene while this scene is open.
 		window.setTitle(title);
 		window.setMinHeight(100);
-		window.setMinWidth(280);
+		window.setMinWidth(350);
 		
 		Label label = new Label();
 		label.setText(message);

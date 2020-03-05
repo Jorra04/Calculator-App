@@ -11,10 +11,10 @@
       <Button fx:id="randomNum" layoutX="203.0" layoutY="80.0" mnemonicParsing="false" onAction="#randomNumHandler" prefHeight="35.0" prefWidth="81.0" text="Random" />
       <Button fx:id="logarithm" layoutX="317.0" layoutY="80.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="81.0" text="Log" />
       <Button layoutX="456.0" layoutY="80.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="81.0" text="y= mx +b" />
-      <Button layoutX="68.0" layoutY="175.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="81.0" text="Matrix" />
-      <Button layoutX="198.0" layoutY="175.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="81.0" text="Matrix" />
-      <Button layoutX="312.0" layoutY="175.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="81.0" text="Matrix" />
-      <Button layoutX="451.0" layoutY="175.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="81.0" text="Matrix" />
+      <Button fx:id="permutation" layoutX="68.0" layoutY="175.0" mnemonicParsing="false" onAction="#permutation" prefHeight="35.0" prefWidth="81.0" text="nPr" />
+      <Button fx:id="choose" layoutX="198.0" layoutY="175.0" mnemonicParsing="false" onAction="#choose" prefHeight="35.0" prefWidth="81.0" text="nCr" />
+      <Button fx:id="GCD" layoutX="312.0" layoutY="175.0" mnemonicParsing="false" onAction="#gcdHandler" prefHeight="35.0" prefWidth="81.0" text="GCD" />
+      <Button fx:id="fibseq" layoutX="451.0" layoutY="175.0" mnemonicParsing="false" onAction="#fibSeq" prefHeight="35.0" prefWidth="81.0" text="fibSeq" />
       <Button layoutX="68.0" layoutY="279.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="81.0" text="Matrix" />
       <Button layoutX="198.0" layoutY="279.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="81.0" text="Matrix" />
       <Button layoutX="312.0" layoutY="279.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="81.0" text="Matrix" />
