@@ -17,6 +17,10 @@ public class additionalFunctionsController {
     
     @FXML
     void matrixHandler(ActionEvent event)throws Exception {
-    	application.matrixWindow.display("matrix");
+    	applicationWindows.matrixWindow.display("matrix");
+    }
+    @FXML
+    void randomNumHandler(ActionEvent event) throws Exception{
+    	applicationWindows.randomNumberGeneratorWindow.display("Random Number Generator");
     }
 }

@@ -8,7 +8,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.additionalFunctionsController">
    <children>
       <Button fx:id="matrix" layoutX="73.0" layoutY="80.0" mnemonicParsing="false" onAction="#matrixHandler" prefHeight="35.0" prefWidth="81.0" text="Matrix" />
-      <Button fx:id="randomNum" layoutX="203.0" layoutY="80.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="81.0" text="Random" />
+      <Button fx:id="randomNum" layoutX="203.0" layoutY="80.0" mnemonicParsing="false" onAction="#randomNumHandler" prefHeight="35.0" prefWidth="81.0" text="Random" />
       <Button fx:id="logarithm" layoutX="317.0" layoutY="80.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="81.0" text="Log" />
       <Button layoutX="456.0" layoutY="80.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="81.0" text="y= mx +b" />
       <Button layoutX="68.0" layoutY="175.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="81.0" text="Matrix" />

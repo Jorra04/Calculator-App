@@ -1,4 +1,4 @@
-package application;
+package applicationWindows;
 	
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -13,7 +13,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception{ 
 		
-		Parent root = FXMLLoader.load(getClass().getResource("calc.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/FXMLDocs/calc.fxml"));
 		   
 	    Scene scene = new Scene(root, 1050, 750);
 		
@@ -24,6 +24,19 @@ public class Main extends Application {
 	    primaryStage.setResizable(true);
 	    primaryStage.show();
 	    
+	    
+	    primaryStage.setOnCloseRequest(e -> {
+	    	application.closeRequestMessage.display("Confirm Exit", "Are you sure you want to exit? All "
+	    			+ "windows will be closed.");
+	    	if(application.closeRequestMessage.closePressed) {
+	    		System.exit(0); //closes all Platform.exit() doesn't work for some reason.
+	    	}
+	    	else {
+	    		e.consume();
+	    	}
+	    	
+	    	
+	    });
 	    
 	   
 	}

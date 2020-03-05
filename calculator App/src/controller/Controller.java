@@ -211,8 +211,6 @@ public class Controller {
 			display.clear();
 		}
 		display.setText(display.getText() + "π");
-		System.out.println(num1 + "-->" + num1.length());
-		System.out.println(num1 + "-->" + num2.length());
 		if (num1.length() != 0 && num2.length() != 0) {
 			if (!operatorPressed) {
 
@@ -227,6 +225,31 @@ public class Controller {
 				num1 += Math.PI;
 			} else {
 				num2 += Math.PI;
+			}
+			computationComplete = false;
+		}
+
+	}
+	@FXML
+	void ePressed(ActionEvent event) {
+		if (computationComplete) {
+			display.clear();
+		}
+		display.setText(display.getText() + "e");
+		if (num1.length() != 0 && num2.length() != 0) {
+			if (!operatorPressed) {
+
+				num1 = "" + Float.parseFloat(num1) * Math.E;
+			} else {
+				num2 = "" + Float.parseFloat(num2) * Math.E;
+			}
+			computationComplete = false;
+		} else {
+			if (!operatorPressed) {
+
+				num1 += Math.E;
+			} else {
+				num2 += Math.E;
 			}
 			computationComplete = false;
 		}
@@ -325,12 +348,12 @@ public class Controller {
 
 	@FXML
 	void baseChange(ActionEvent event) throws Exception {
-		application.baseChangeWindow.display("Base Change Coversion");
+		applicationWindows.baseChangeWindow.display("Base Change Coversion");
 	}
 
 	@FXML
 	void additionalFunctions(ActionEvent event) throws Exception {
-		application.additionalFunctionsWindow.display("Base Change Coversion");
+		applicationWindows.additionalFunctionsWindow.display("Base Change Coversion");
 	}
 
 	@FXML
