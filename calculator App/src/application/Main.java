@@ -1,6 +1,7 @@
 package application;
 	
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
@@ -16,12 +17,18 @@ public class Main extends Application {
 		   
 	    Scene scene = new Scene(root, 1050, 750);
 		
-		
+	   
 	
 	    primaryStage.setTitle("Calculator");
 	    primaryStage.setScene(scene);
 	    primaryStage.setResizable(true);
 	    primaryStage.show();
+	    
+	   primaryStage.setOnCloseRequest(e -> {
+		   Platform.exit();
+	   });
+	    
+	   
 	}
 	
 	public static void main(String[] args) {

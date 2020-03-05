@@ -110,9 +110,15 @@ public class Controller {
 
 	@FXML
 	private Button pi;
-	@FXML 
+	@FXML
 	private Button exFunc;
-	
+
+	@FXML
+	private Button modulo;
+
+	@FXML
+	private Button euler;
+
 	private DecimalFormat df = new DecimalFormat("0.0000");
 
 	public void initialize() {
@@ -205,9 +211,9 @@ public class Controller {
 			display.clear();
 		}
 		display.setText(display.getText() + "π");
-		System.out.println(num1+ "-->" + num1.length());
+		System.out.println(num1 + "-->" + num1.length());
 		System.out.println(num1 + "-->" + num2.length());
-		if(num1.length() !=0 && num2.length()!= 0) {
+		if (num1.length() != 0 && num2.length() != 0) {
 			if (!operatorPressed) {
 
 				num1 = "" + Float.parseFloat(num1) * Math.PI;
@@ -215,17 +221,16 @@ public class Controller {
 				num2 = "" + Float.parseFloat(num2) * Math.PI;
 			}
 			computationComplete = false;
-		}
-		else {
+		} else {
 			if (!operatorPressed) {
 
-				num1 +=  Math.PI;
+				num1 += Math.PI;
 			} else {
-				num2 +=Math.PI;
+				num2 += Math.PI;
 			}
 			computationComplete = false;
 		}
-		
+
 	}
 
 	@FXML
@@ -302,7 +307,7 @@ public class Controller {
 
 	@FXML
 	void sqrt(ActionEvent event) {
-		
+
 		operatorPressed = true;
 		computationComplete = false;
 		display.setText("sqrt(" + display.getText() + ")");
@@ -321,6 +326,11 @@ public class Controller {
 	@FXML
 	void baseChange(ActionEvent event) throws Exception {
 		application.baseChangeWindow.display("Base Change Coversion");
+	}
+
+	@FXML
+	void additionalFunctions(ActionEvent event) throws Exception {
+		application.additionalFunctionsWindow.display("Base Change Coversion");
 	}
 
 	@FXML
@@ -352,7 +362,7 @@ public class Controller {
 		if (computationComplete) {
 			display.clear();
 		}
-		
+
 		operatorPressed = true;
 		computationComplete = false;
 		display.setText("tan(" + display.getText() + ")");
@@ -444,36 +454,33 @@ public class Controller {
 		} else if (operator == 's') {
 			if (inRads) {
 				display.setText(df.format((Math.sin(Float.parseFloat(num1)))));
-				
+
 			} else {
 				double val = Double.parseDouble(num1);
-				double rad = val*(Math.PI / 180);
+				double rad = val * (Math.PI / 180);
 				display.setText(df.format(Math.sin(rad)));
 			}
 
 		} else if (operator == 'c') {
-			if(inRads) {
+			if (inRads) {
 				display.setText(df.format((Math.cos(Float.parseFloat(num1)))));
-			}
-			else {
+			} else {
 				double val = Double.parseDouble(num1);
-				double rad = val*(Math.PI / 180);
-				
+				double rad = val * (Math.PI / 180);
+
 				display.setText(df.format(Math.cos(rad)));
 			}
-			
+
 		} else if (operator == 't') {
-			if(inRads) {
+			if (inRads) {
 				display.setText(df.format((Math.tan(Math.toRadians(Float.parseFloat(num1))))));
-			}
-			else {
+			} else {
 				double val = Double.parseDouble(num1);
-				double rad = val*(Math.PI / 180);
-				
+				double rad = val * (Math.PI / 180);
+
 				display.setText(df.format(Math.tan(rad)));
 			}
-			
-			
+
 		} else {
 			display.setText(num1);
 		}
