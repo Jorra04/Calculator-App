@@ -236,6 +236,11 @@ public class Controller {
 		operatorPressed = true;
 		computationComplete = false;
 		operator = 'n'; 
+	} 
+	
+	@FXML
+	void baseChange(ActionEvent event ) throws Exception {
+		application.baseChangeWindow.display("Hello");
 	}
 	
 

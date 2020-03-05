@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="403.0" prefWidth="411.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.baseChangeController">
+   <children>
+      <Pane prefHeight="48.0" prefWidth="334.0">
+         <children>
+            <Text layoutX="74.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="welcome to the base change" wrappingWidth="221.13671875" />
+         </children>
+      </Pane>
+      <TextField fx:id="text1" layoutX="33.0" layoutY="74.0" />
+      <RadioButton fx:id="dec" layoutX="291.0" layoutY="67.0" mnemonicParsing="false" onAction="#pressDec" text="Decimal">
+         <toggleGroup>
+            <ToggleGroup fx:id="group1" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="bin" layoutX="291.0" layoutY="92.0" mnemonicParsing="false" onAction="#pressBin" text="Binary" toggleGroup="$group1" />
+      <RadioButton fx:id="hex" layoutX="291.0" layoutY="118.0" mnemonicParsing="false" onAction="#pressHex" text="Hexidecimal" toggleGroup="$group1" />
+      <TextField fx:id="text2" layoutX="33.0" layoutY="190.0" />
+      <RadioButton fx:id="dec2" layoutX="291.0" layoutY="183.0" mnemonicParsing="false" onAction="#pressDec2" text="Decimal">
+         <toggleGroup>
+            <ToggleGroup fx:id="group2" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="bin2" layoutX="291.0" layoutY="208.0" mnemonicParsing="false" onAction="#pressBin2" text="Binary" toggleGroup="$group2" />
+      <RadioButton fx:id="hex2" layoutX="291.0" layoutY="234.0" mnemonicParsing="false" onAction="#pressHex2" text="Hexidecimal" toggleGroup="$group2" />
+      <Button fx:id="convert" layoutX="206.0" layoutY="74.0" mnemonicParsing="false" onAction="#computeHandler" text="Convert" />
+   </children>
+</AnchorPane>

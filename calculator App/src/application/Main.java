@@ -14,7 +14,7 @@ public class Main extends Application {
 		
 		Parent root = FXMLLoader.load(getClass().getResource("calc.fxml"));
 		   
-	    Scene scene = new Scene(root, 900, 650);
+	    Scene scene = new Scene(root, 1200, 850);
 		
 		
 	

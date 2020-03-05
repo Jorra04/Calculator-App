@@ -6,11 +6,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="789.0" prefWidth="1216.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
    <children>
-      <Pane prefHeight="71.0" prefWidth="904.0">
+      <Pane prefHeight="71.0" prefWidth="1223.0">
          <children>
-            <TextField fx:id="display" layoutY="7.0" prefHeight="54.0" prefWidth="892.0">
+            <TextField fx:id="display" layoutX="4.0" layoutY="11.0" prefHeight="54.0" prefWidth="1187.0">
                <font>
                   <Font name="Bell MT Bold" size="18.0" />
                </font></TextField>
@@ -41,9 +41,10 @@
       <Button fx:id="sqrt" layoutX="686.0" layoutY="319.0" mnemonicParsing="false" onAction="#sqrt" prefHeight="48.0" prefWidth="84.0" text="Sqrt(n)" />
       <Button fx:id="square" layoutX="686.0" layoutY="490.0" mnemonicParsing="false" onAction="#square" prefHeight="48.0" prefWidth="84.0" text="x^2" />
       <Button fx:id="exp1" layoutX="686.0" layoutY="405.0" mnemonicParsing="false" onAction="#exponentiate" prefHeight="48.0" prefWidth="84.0" text="x^y" />
-      <Button fx:id="Binary" layoutX="806.0" layoutY="235.0" mnemonicParsing="false" onAction="#zeroPressed" prefHeight="48.0" prefWidth="84.0" text="BIN" />
-      <Button fx:id="hex" layoutX="806.0" layoutY="319.0" mnemonicParsing="false" onAction="#zeroPressed" prefHeight="48.0" prefWidth="84.0" text="HEX" />
-      <Button fx:id="decimal" layoutX="806.0" layoutY="405.0" mnemonicParsing="false" onAction="#zeroPressed" prefHeight="48.0" prefWidth="84.0" text="DEC" />
-      <Button fx:id="signSwap" layoutX="806.0" layoutY="490.0" mnemonicParsing="false" onAction="#negate" prefHeight="48.0" prefWidth="84.0" text="+/-" />
+      <Button fx:id="baseChange" layoutX="806.0" layoutY="235.0" mnemonicParsing="false" onAction="#baseChange" prefHeight="48.0" prefWidth="101.0" text="Base Change" />
+      <Button fx:id="signSwap" layoutX="232.0" layoutY="565.0" mnemonicParsing="false" onAction="#negate" prefHeight="49.0" prefWidth="81.0" text="+/-" />
+      <Button fx:id="sin" layoutX="805.0" layoutY="321.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="105.0" text="SIN" />
+      <Button fx:id="cos" layoutX="810.0" layoutY="416.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="105.0" text="COS" />
+      <Button fx:id="tan" layoutX="807.0" layoutY="499.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="105.0" text="TAN" />
    </children>
 </AnchorPane>
