@@ -438,9 +438,14 @@ public class Controller {
 			display.setText(Float.toString(val));
 		} else if (operator == 's') {
 			if (inRads) {
-				display.setText(Float.toString((float) Math.sin(Math.toRadians(Float.parseFloat(num1)))));
+				display.setText(Float.toString((float) Math.sin((Double.parseDouble(num1)))));
+				System.out.println(Math.toRadians(Math.sin(Math.PI)));
+				
 			} else {
-				display.setText(Float.toString((float) Math.sin(Math.toDegrees(Float.parseFloat(num1)))));
+				double val = Double.parseDouble(num1);
+				double rad = val*(Math.PI / 180);
+				
+				display.setText(Float.toString((float) Math.sin(rad)));
 			}
 
 		} else if (operator == 'c') {
@@ -448,15 +453,21 @@ public class Controller {
 				display.setText(Float.toString((float) Math.cos(Math.toRadians(Float.parseFloat(num1)))));
 			}
 			else {
-				display.setText(Float.toString((float) Math.cos(Math.toDegrees(Float.parseFloat(num1)))));
+				double val = Double.parseDouble(num1);
+				double rad = val*(Math.PI / 180);
+				
+				display.setText(Float.toString((float) Math.cos(rad)));
 			}
 			
 		} else if (operator == 't') {
 			if(inRads) {
-				display.setText(Float.toString((float) Math.tan(Math.toRadians(Float.parseFloat(num1)))));
+				display.setText(Float.toString((float) Math.tan(Math.toRadians(Double.parseDouble(num1)))));
 			}
 			else {
-				display.setText(Float.toString((float) Math.tan(Math.toDegrees(Float.parseFloat(num1)))));
+				double val = Double.parseDouble(num1);
+				double rad = val*(Math.PI / 180);
+				
+				display.setText(Float.toString((float) Math.tan(rad)));
 			}
 			
 			
