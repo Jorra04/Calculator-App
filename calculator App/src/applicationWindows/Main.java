@@ -26,9 +26,9 @@ public class Main extends Application {
 	    
 	    
 	    primaryStage.setOnCloseRequest(e -> {
-	    	application.closeRequestMessage.display("Confirm Exit", "Are you sure you want to exit? All "
+	    	applicationMessages.closeRequestMessage.display("Confirm Exit", "Are you sure you want to exit? All "
 	    			+ "windows will be closed.");
-	    	if(application.closeRequestMessage.closePressed) {
+	    	if(applicationMessages.closeRequestMessage.closePressed) {
 	    		System.exit(0); //closes all Platform.exit() doesn't work for some reason.
 	    	}
 	    	else {

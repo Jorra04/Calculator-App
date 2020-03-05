@@ -148,7 +148,7 @@ public class baseChangeController {
 				text2.setText(text1.getText());
 			}
 		} catch (Exception e) {
-			application.ErrorMessage.display("Error", "Invalid format Exception");
+			applicationMessages.ErrorMessage.display("Error", "Invalid format Exception");
 			text1.setText("");
 			text2.setText("");
 		}

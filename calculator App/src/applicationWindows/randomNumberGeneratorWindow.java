@@ -24,11 +24,6 @@ public class randomNumberGeneratorWindow {
 		window.setMinHeight(400);
 		window.setMinWidth(600);
 		
-		
-
-		
-		
-		
 		Scene scene = new Scene(root,300,150);
 		window.setScene(scene);
 		window.showAndWait();

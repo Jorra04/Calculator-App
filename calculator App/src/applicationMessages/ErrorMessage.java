@@ -1,4 +1,4 @@
-package application;
+package applicationMessages;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -9,11 +9,10 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class closeRequestMessage {
+public class ErrorMessage {
 	public static Stage window;
-	protected static Button quit = new Button("Quit");
-	protected static Button cancel = new Button("Cancel");
-	public static boolean cancelPressed, closePressed;
+	static Button confirm = new Button("Okay, Got It.");
+	private static boolean confirmPressed;
 	
 	
 	public static void display(String title, String message) {
@@ -21,28 +20,22 @@ public class closeRequestMessage {
 		window.initModality(Modality.APPLICATION_MODAL); //stops interaction with the other scene while this scene is open.
 		window.setTitle(title);
 		window.setMinHeight(100);
-		window.setMinWidth(280);
+		window.setMinWidth(250);
 		
 		Label label = new Label();
 		label.setText(message);
-		
-		quit.setOnAction(e -> {
-			closePressed = true;
-			window.close();
-		});
-		cancel.setOnAction(e-> {
-			cancelPressed = true;
+
+		confirm.setOnAction(e-> {
+			confirmPressed = true;
 			window.close();
 		});
 		
 		StackPane layout = new StackPane();
-		layout.getChildren().addAll(label,quit,cancel);
+		layout.getChildren().addAll(label,confirm);
 		StackPane.setAlignment(label, Pos.TOP_CENTER);
 		StackPane.setMargin(label, new Insets(5,0,0,0));
-		StackPane.setAlignment(quit, Pos.CENTER_LEFT);
-		StackPane.setMargin(quit, new Insets(30,0,10,60));
-		StackPane.setAlignment(cancel, Pos.CENTER_RIGHT);
-		StackPane.setMargin(cancel, new Insets(30,60,10,0));
+		StackPane.setAlignment(confirm, Pos.CENTER);
+		StackPane.setMargin(confirm, new Insets(20,0,0,0));
 		
 		Scene scene = new Scene(layout);
 		window.setScene(scene);
