@@ -16,85 +16,93 @@ public class Controller {
 	String num2 = "";
 	char operator = ' ';
 	float val = 0;
-	
+
 	@FXML
-    private TextField display;
+	private TextField display;
 
-    @FXML
-    private Button one;
+	@FXML
+	private Button one;
 
-    @FXML
-    private Button two;
+	@FXML
+	private Button two;
 
-    @FXML
-    private Button mul;
+	@FXML
+	private Button mul;
 
-    @FXML
-    private Button nine;
+	@FXML
+	private Button nine;
 
-    @FXML
-    private Button eight;
+	@FXML
+	private Button eight;
 
-    @FXML
-    private Button seven;
+	@FXML
+	private Button seven;
 
-    @FXML
-    private Button sub;
+	@FXML
+	private Button sub;
 
-    @FXML
-    private Button six;
+	@FXML
+	private Button six;
 
-    @FXML
-    private Button five;
+	@FXML
+	private Button five;
 
-    @FXML
-    private Button four;
+	@FXML
+	private Button four;
 
-    @FXML
-    private Button add;
+	@FXML
+	private Button add;
 
-    @FXML
-    private Button three;
+	@FXML
+	private Button three;
 
-    @FXML
-    private Button clearAll;
+	@FXML
+	private Button clearAll;
 
-    @FXML
-    private Button equals;
+	@FXML
+	private Button equals;
 
-    @FXML
-    private Button zero;
+	@FXML
+	private Button zero;
 
-    @FXML
-    private Button div;
+	@FXML
+	private Button div;
 
-    @FXML
-    private Button ans;
+	@FXML
+	private Button ans;
 
-    @FXML
-    private Button factorial;
+	@FXML
+	private Button factorial;
 
-    @FXML
-    private Button sqrt;
+	@FXML
+	private Button sqrt;
 
-    @FXML
-    private Button square;
+	@FXML
+	private Button square;
 
-    @FXML
-    private Button exp1;
+	@FXML
+	private Button exp1;
 
-    @FXML
-    private Button Binary;
+	@FXML
+	private Button Binary;
 
-    @FXML
-    private Button hex;
+	@FXML
+	private Button hex;
 
-    @FXML
-    private Button decimal;
+	@FXML
+	private Button decimal;
 
-    @FXML
-    private Button signSwap;
-    
+	@FXML
+	private Button signSwap;
+	@FXML
+	private Button sin;
+
+	@FXML
+	private Button cos;
+
+	@FXML
+	private Button tan;
+
 	public void initialize() {
 		display.setEditable(false);
 	}
@@ -110,8 +118,6 @@ public class Controller {
 //			addNum(1);
 //		}
 //	}
-	
-	
 
 	@FXML
 	void twoPressed(ActionEvent event) {
@@ -157,13 +163,14 @@ public class Controller {
 	void zeroPressed(ActionEvent event) {
 		addNum(0);
 	}
+
 	@FXML
 	void ansPressed(ActionEvent event) {
 		display.clear();
 		display.setText(display.getText() + val);
 
 		if (!operatorPressed) {
-			num1 +=val;
+			num1 += val;
 		} else {
 			num2 += 0;
 		}
@@ -203,6 +210,7 @@ public class Controller {
 		display.setText(display.getText() + "/");
 		operator = '/';
 	}
+
 	@FXML
 	void exponentiate(ActionEvent event) {
 		operatorPressed = true;
@@ -210,47 +218,73 @@ public class Controller {
 		display.setText(display.getText() + "^");
 		operator = '^';
 	}
+
 	@FXML
 	void square(ActionEvent event) {
 		operatorPressed = true;
 		computationComplete = false;
 		display.setText(display.getText() + "^2");
-		operator = '\''; //because i used char to disclose the operator, ** wont work, so i use @.
+		operator = '\''; // because i used char to disclose the operator, ** wont work, so i use @.
 	}
+
 	@FXML
 	void factorial(ActionEvent event) {
 		operatorPressed = true;
 		computationComplete = false;
 		display.setText(display.getText() + "!");
-		operator = '!'; 
+		operator = '!';
 		Operations();
 	}
+
 	@FXML
 	void sqrt(ActionEvent event) {
 		operatorPressed = true;
 		computationComplete = false;
-		display.setText("sqrt("+display.getText()+")");
-		operator = 'r'; 
+		display.setText("sqrt(" + display.getText() + ")");
+		operator = 'r';
 		Operations();
 	}
+
 	@FXML
 	void negate(ActionEvent event) {
 		operatorPressed = true;
 		computationComplete = false;
-		operator = 'n'; 
+		operator = 'n';
 		Operations();
-	} 
-	
+	}
+
 	@FXML
-	void baseChange(ActionEvent event ) throws Exception {
+	void baseChange(ActionEvent event) throws Exception {
 		application.baseChangeWindow.display("Base Change Coversion");
 	}
-	
+
+	@FXML
+	void sine(ActionEvent event) {
+		operatorPressed = true;
+		computationComplete = false;
+		operator = 's'; // s for sine
+		Operations();
+	}
+
+	@FXML
+	void cosine(ActionEvent event) {
+		operatorPressed = true;
+		computationComplete = false;
+		operator = 'c'; // c for cosine
+		Operations();
+	}
+
+	@FXML
+	void tangent(ActionEvent event) {
+		operatorPressed = true;
+		computationComplete = false;
+		operator = 't'; // t for tangent
+		Operations();
+	}
 
 	@FXML
 	void compute(ActionEvent event) {
 		Operations();
-
 	}
 
 	@FXML
@@ -261,12 +295,10 @@ public class Controller {
 		num2 = " ";
 		val = 0;
 		display.clear();
-		
 	}
-	
-	
+
 	void addNum(int num) {
-		if(computationComplete) {
+		if (computationComplete) {
 			display.clear();
 		}
 		display.setText(display.getText() + num);
@@ -278,19 +310,21 @@ public class Controller {
 		}
 		computationComplete = false;
 	}
+
 	float factorial(float num) {
 		float val = 1;
-		for(int i = 1; i <= num; i ++) {
-			val*=i;
+		for (int i = 1; i <= num; i++) {
+			val *= i;
 		}
 		return val;
 	}
+
 	void Operations() {
-		if(num1.isBlank() || num1.isEmpty()) {
+		if (num1.isBlank() || num1.isEmpty()) {
 			num1 += val;
 		}
-		if(num2.isBlank() || num2.isEmpty()) {
-			num2+=0;
+		if (num2.isBlank() || num2.isEmpty()) {
+			num2 += 0;
 		}
 		if (operator == '+') {
 			val = Float.parseFloat(num1) + Float.parseFloat(num2);
@@ -306,37 +340,36 @@ public class Controller {
 
 		} else if (operator == '/') {
 			float v2 = Float.parseFloat(num2);
-			if(v2 == 0) {
+			if (v2 == 0) {
 				display.setText("ERROR DIV BY 0");
-			}
-			else {
-				val =  Float.parseFloat(num1) / v2;
+			} else {
+				val = Float.parseFloat(num1) / v2;
 				display.setText(Float.toString(val));
 			}
-			
-		}
-		else if(operator == '^') {
-			val = (float)Math.pow(Float.parseFloat(num1), Float.parseFloat(num2));
+
+		} else if (operator == '^') {
+			val = (float) Math.pow(Float.parseFloat(num1), Float.parseFloat(num2));
 			display.setText(Float.toString(val));
-		}
-		else if(operator == '\'') {
-			val = (float)Math.pow(Float.parseFloat(num1), 2);
+		} else if (operator == '\'') {
+			val = (float) Math.pow(Float.parseFloat(num1), 2);
 			display.setText(Float.toString(val));
-		}
-		else if(operator == '!') {
+		} else if (operator == '!') {
 			val = factorial(Float.parseFloat(num1));
 			display.setText(Float.toString(val));
-		}
-		else if(operator == 'r') {
+		} else if (operator == 'r') {
 			val = (float) Math.sqrt(Float.parseFloat(num1));
 			display.setText(Float.toString(val));
-		}
-		else if(operator == 'n') {
-			float val1 =Float.parseFloat(num1);
-			val = -1*val1;
+		} else if (operator == 'n') {
+			float val1 = Float.parseFloat(num1);
+			val = -1 * val1;
 			display.setText(Float.toString(val));
-		}
-		else {
+		} else if (operator == 's') {
+			display.setText(Float.toString((float)Math.sin(Float.parseFloat(num1))));
+		} else if (operator == 'c') {
+			display.setText(Float.toString((float)Math.cos(Float.parseFloat(num1))));
+		} else if (operator == 't') {
+			display.setText(Float.toString((float)Math.tan(Float.parseFloat(num1))));
+		} else {
 			display.setText(num1);
 		}
 		num1 = "";

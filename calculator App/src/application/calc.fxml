@@ -43,8 +43,8 @@
       <Button fx:id="exp1" layoutX="686.0" layoutY="405.0" mnemonicParsing="false" onAction="#exponentiate" prefHeight="48.0" prefWidth="84.0" text="x^y" />
       <Button fx:id="baseChange" layoutX="806.0" layoutY="235.0" mnemonicParsing="false" onAction="#baseChange" prefHeight="48.0" prefWidth="101.0" text="Base Change" />
       <Button fx:id="signSwap" layoutX="232.0" layoutY="565.0" mnemonicParsing="false" onAction="#negate" prefHeight="49.0" prefWidth="81.0" text="+/-" />
-      <Button fx:id="sin" layoutX="805.0" layoutY="321.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="105.0" text="SIN" />
-      <Button fx:id="cos" layoutX="810.0" layoutY="416.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="105.0" text="COS" />
-      <Button fx:id="tan" layoutX="807.0" layoutY="499.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="105.0" text="TAN" />
+      <Button fx:id="sin" layoutX="805.0" layoutY="321.0" mnemonicParsing="false" onAction="#sine" prefHeight="49.0" prefWidth="105.0" text="SIN" />
+      <Button fx:id="cos" layoutX="810.0" layoutY="416.0" mnemonicParsing="false" onAction="#cosine" prefHeight="49.0" prefWidth="105.0" text="COS" />
+      <Button fx:id="tan" layoutX="807.0" layoutY="499.0" mnemonicParsing="false" onAction="#tangent" prefHeight="49.0" prefWidth="105.0" text="TAN" />
    </children>
 </AnchorPane>
